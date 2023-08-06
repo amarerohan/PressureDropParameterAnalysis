@@ -1,0 +1,16 @@
+#!/bin/bash -l
+#SBATCH --mem=1G
+#SBATCH --time=5-00:00:00
+#SBATCH --partition=ksu-mne-bahadori.q,ksu-ier-gmann.q,batch.q
+#SBATCH --job-name=flow_38
+#SBATCH --nodes=3
+#SBATCH --ntasks-per-node=8
+
+
+
+module purge
+module load Python
+module load matplotlib
+module load Tkinter
+
+python Flow_load_solver_parallelized.py

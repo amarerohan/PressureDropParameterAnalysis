@@ -1,0 +1,16 @@
+#!/bin/bash -l
+#SBATCH --mem=10G
+#SBATCH --time=5-00:00:00
+#SBATCH --partition=ksu-mne-bahadori.q,ksu-ier-gmann.q,batch.q
+#SBATCH --job-name=e1_38
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=32
+
+
+
+module purge
+module load Python
+module load matplotlib
+module load Tkinter
+
+python Error_Comparison_Analysis.py

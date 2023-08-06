@@ -1,0 +1,16 @@
+#!/bin/bash -l
+#SBATCH --mem=25G
+#SBATCH --time=5-00:00:00
+#SBATCH --partition=ksu-mne-bahadori.q,ksu-ier-gmann.q,batch.q
+#SBATCH --job-name=1
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=16
+
+
+
+module purge
+module load Python
+module load matplotlib
+module load Tkinter
+
+python Energy_solver_without_gen.py
